@@ -1,0 +1,31 @@
+{
+  "name": "{{ appName }}",
+  "authors": [
+    "{{ Author }}"
+  ],
+  "description": "{{ description }}",
+  "main": "./app/index.html",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "^1.2.3",
+    "jquery": "^2.2.0",
+    "underscore": "^1.8.3",
+    "requirejs": "^2.1.22",
+    "text": "requirejs-text#^2.0.14",
+    "components-font-awesome": "^4.5.0",
+    "bootstrap": "^3.3.6"
+  }
+}
