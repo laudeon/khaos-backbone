@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "{{ licence }}",
-  "license": "MIT",
+  "author": "{{ author }}",
+  "license": "{{ licence }}",
   "devDependencies": {
     "del": "^2.2.0",
     "gulp": "^3.9.0",

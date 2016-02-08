@@ -7,16 +7,20 @@ A Khaos template to start new backbone.js projects quickly.
 
 - jQuery & Underscore (Backbone deps)
 - RequireJS && RequireJS/Text (to require underscore templates)
-- Bootstrap
-- Font Awesome
+- Bootstrap (optional)
+- Font Awesome (optional)
 - Gulp as the task manager
-
 
 ## Installation
 
 Save the template locally with:
 
     $ khaos install laudeon/khaos-backbone backbone
+    
+Then, run:
+	
+	$ npm install
+	$ bower install
 
 ## Usage
 

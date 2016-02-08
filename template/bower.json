@@ -1,16 +1,16 @@
 {
   "name": "{{ appName }}",
   "authors": [
-    "{{ Author }}"
+    "{{ author }}"
   ],
   "description": "{{ description }}",
   "main": "./app/index.html",
   "moduleType": [
     "node"
   ],
-  "license": "MIT",
-  "homepage": "",
-  "private": true,
+  "license": "{{ licence }}",
+  "homepage": "",{{#private}}
+  "private": true,{{/private}}
   "ignore": [
     "**/.*",
     "node_modules",
@@ -24,8 +24,8 @@
     "jquery": "^2.2.0",
     "underscore": "^1.8.3",
     "requirejs": "^2.1.22",
-    "text": "requirejs-text#^2.0.14",
-    "components-font-awesome": "^4.5.0",
-    "bootstrap": "^3.3.6"
+    "text": "requirejs-text#^2.0.14",{{#fontAwesome}}
+    "components-font-awesome": "^4.5.0",{{/fontAwesome}}{{#Bootstrap}}
+    "bootstrap": "^3.3.6"{{/Bootstrap}}
   }
 }
