@@ -10,8 +10,7 @@ var gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	concat = require('gulp-concat'),
 	del = require('del'),
-	wiredep = require('wiredep').stream,
-	mocha = require('gulp-mocha');
+	wiredep = require('wiredep').stream;
 
 /**
  * @task default
@@ -39,6 +38,16 @@ gulp.task('sass', function() {
 	gulp.src(['./app/styles/*.sass', './app/styles/**/*.sass'])
 		.pipe(sass())
 		.pipe(gulp.dest('.tmp/styles'))
+		.pipe(connect.reload());
+});
+
+/**
+ * @task default
+ *
+ * Run server reload on changes
+ */
+gulp.task('html', function() {
+	return gulp.src(['./app/scripts/templates/*.html', './app/*.html'])
 		.pipe(connect.reload());
 });
 

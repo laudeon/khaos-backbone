@@ -1,4 +1,5 @@
 .idea
+template/npm-debug.log
 template/node_modules
 template/bower_components
 template/bower.json.dist
