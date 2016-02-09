@@ -1,14 +1,25 @@
 /**
- *
+ * @file gulpfile.js
+ * @description
+ * There are two tasks to manage your app: 'default' and 'build'
  */
+
 var gulp = require('gulp'),
 	connect = require('gulp-connect'),
 	watch = require('gulp-watch'),
 	sass = require('gulp-sass'),
 	concat = require('gulp-concat'),
 	del = require('del'),
-	wiredep = require('wiredep').stream;
+	wiredep = require('wiredep').stream,
+	mocha = require('gulp-mocha');
 
+/**
+ * @task default
+ *
+ * Local http web server on port 8080 by default
+ *
+ * @see https://www.npmjs.com/package/gulp-connect
+ */
 gulp.task('webserver', function() {
 	connect.server({
 		livereload: true,
@@ -16,6 +27,14 @@ gulp.task('webserver', function() {
 	});
 });
 
+/**
+ * @task default, build
+ *
+ * Sass compilation
+ * Run server reload on changes
+ *
+ * @see https://www.npmjs.com/package/gulp-sass
+ */
 gulp.task('sass', function() {
 	gulp.src(['./app/styles/*.sass', './app/styles/**/*.sass'])
 		.pipe(sass())
@@ -23,17 +42,25 @@ gulp.task('sass', function() {
 		.pipe(connect.reload());
 });
 
+/**
+ * @task default
+ *
+ * Move scripts to .tmp folder
+ * This is very useless, because local web server listen on app folder, not just .tmp.
+ * But it is to anticipate a real useful 'build' task and 'serve' task
+ *
+ * Run server reload on changes
+ */
 gulp.task('scripts', function() {
 	return gulp.src(['./app/scripts/*.js', './app/scripts/**/*.js'])
 		.pipe(gulp.dest('.tmp/scripts'))
 		.pipe(connect.reload());
 });
 
-gulp.task('html', function () {
-	gulp.src(['./*.html', './app/*.html', './app/scripts/templates/*.html'])
-		.pipe(connect.reload());
-});
-
+/**
+ * @task default
+ * @see https://www.npmjs.com/package/gulp-watch
+ */
 gulp.task('watch', function() {
 	gulp.watch('./app/styles/*.sass', ['sass']);
 	gulp.watch('./app/styles/**/*.sass', ['sass']);
@@ -45,17 +72,31 @@ gulp.task('watch', function() {
 	gulp.watch('./app/scripts/templates/*.html', ['html']);
 });
 
+/**
+ * @task build
+ *
+ * Create the /dist folder
+ * Move all .tmp content in the /dist folder
+ * Move app/index.html too.
+ */
 gulp.task('dist', function() {
 	del.sync(['dist/']);
 	gulp.src(['.tmp/**', 'app/index.html'])
 		.pipe(gulp.dest('dist/'))
 });
 
+/**
+ * @task build
+ * Move all bower deps in /dist folder
+ */
 gulp.task('dep-to-dist', function() {
-	gulp.src(['app/bower_components/**'])
+	gulp.src(['bower_components/**'])
 		.pipe(gulp.dest('dist/bower_components/'))
 });
 
+/**
+ * @task default, build
+ */
 gulp.task('wiredep', function () {
 	gulp.src('./app/index.html')
 		.pipe(wiredep({

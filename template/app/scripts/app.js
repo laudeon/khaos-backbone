@@ -15,19 +15,14 @@ require.config({
 				'jquery'
 			],
 			exports: 'Backbone'
-		},
-		backboneLocalstorage: {
-			deps: ['backbone'],
-			exports: 'Store'
 		}
 	},
 	paths: {
-		jquery: '../bower_components/jquery/dist/jquery',
-		underscore: '../bower_components/underscore/underscore',
-		backbone: '../bower_components/backbone/backbone',
-		backboneLocalstorage: '../bower_components/backbone.localstorage/backbone.localStorage',
-		text: '../bower_components/text/text',
-		bootstrap: '../bower_components/bootstrap/dist/js/bootstrap'
+		jquery: '../../bower_components/jquery/dist/jquery',
+		underscore: '../../bower_components/underscore/underscore',
+		backbone: '../../bower_components/backbone/backbone',
+		text: '../../bower_components/text/text',
+		bootstrap: '../../bower_components/bootstrap/dist/js/bootstrap'
 	}
 });
 

@@ -1,1 +1,5 @@
 .idea
+template/node_modules
+template/bower_components
+template/bower.json.dist
+template/package.json.dist

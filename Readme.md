@@ -3,6 +3,9 @@
 
 A Khaos template to start new backbone.js projects quickly.
 
+Read more about Khaos: [http://khaos.io](http://khaos.io)
+Khaos github page: [https://github.com/segmentio/khaos](https://github.com/segmentio/khaos)
+
 ## Provides with
 
 - jQuery & Underscore (Backbone deps)
