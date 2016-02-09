@@ -21,18 +21,18 @@ require.config({
 		jquery: '../../bower_components/jquery/dist/jquery',
 		underscore: '../../bower_components/underscore/underscore',
 		backbone: '../../bower_components/backbone/backbone',
-		text: '../../bower_components/text/text',
-		bootstrap: '../../bower_components/bootstrap/dist/js/bootstrap'
+		text: '../../bower_components/text/text'{{#Bootstrap}},
+		bootstrap: '../../bower_components/bootstrap/dist/js/bootstrap'{{/Bootstrap}}
 	}
 });
 
 require([
 	'backbone',
 	'underscore',
-	'jquery',
-	'bootstrap',
+	'jquery',{{#Bootstrap}}
+	'bootstrap',{{/Bootstrap}}
 	'routers/app'
-], function (Backbone, _, $, bootstrap, AppRouter) {
+], function (Backbone, _, $, {{#Bootstrap}}bootstrap,{{/Bootstrap}} AppRouter) {
 	// Initialize routing and start Backbone.history()
 	var router = new AppRouter();
 	if (!Backbone.history.start()) router.navigate('404', {trigger:true});
