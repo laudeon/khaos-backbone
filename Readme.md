@@ -10,6 +10,7 @@ Khaos github page: [https://github.com/segmentio/khaos](https://github.com/segme
 
 - jQuery & Underscore (Backbone deps)
 - RequireJS && RequireJS/Text (to require underscore templates)
+- Sass support (with Gulp)
 - Bootstrap (optional)
 - Font Awesome (optional)
 - Gulp as the task manager
