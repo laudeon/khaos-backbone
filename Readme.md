@@ -20,16 +20,16 @@ Save the template locally with:
 
     $ khaos install laudeon/khaos-backbone backbone
     
-Then, run:
-	
-	$ npm install
-	$ bower install
-
 ## Usage
 
 Create a new backbone.js project with:
 
     $ khaos backbone my-project
+
+Then, run:
+	
+	$ npm install
+	$ bower install
     
 Run your app in a local development server:
 
@@ -43,7 +43,7 @@ Build your app:
 
 The MIT License
 
-Copyright &copy; 2016, laudeon.me, Louis Audeon.
+Copyright &copy; 2016, [http://laudeon.me](http://laudeon.me), Louis Audeon.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
